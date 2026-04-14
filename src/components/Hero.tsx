@@ -55,6 +55,12 @@ export default function Hero() {
             <span className="text-blue font-medium">South Korea 🇰🇷</span> from
             September.
           </motion.p>
+          <motion.p
+            {...fadeUp(0.35)}
+            className="text-xs md:text-sm text-neutral-500 mt-3"
+          >
+            🇫🇷 French (Native) · 🇬🇧 English (B2) · 🇰🇷 Korean (Beginner)
+          </motion.p>
 
           <motion.div {...fadeUp(0.4)} className="flex flex-wrap gap-3 mt-8">
             <a

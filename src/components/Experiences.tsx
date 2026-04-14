@@ -10,9 +10,11 @@ const experiences = [
     bullets: [
       "Build reusable components and interfaces with Lit, TypeScript & SCSS",
       "Contribute to a scalable design system (Figma, Storybook)",
-      "Write end-to-end tests with Cypress to ensure product reliability",
-      "Contribute to backend features with C# and .NET",
-      "Code reviews, Gitflow workflow, production releases",
+      "Manage application state with Redux, including optimistic updates",
+      "Implement feature flags for progressive rollout",
+      "Write end-to-end tests with Cypress to ensure reliability",
+      "Develop backend features with C# and .NET",
+      "Contribute to code reviews, Gitflow workflow and production releases",
     ],
     tags: [
       "TypeScript",
@@ -30,8 +32,22 @@ const experiences = [
     type: "4-year degree",
     title: "Application Development Degree",
     company: "ENI · France",
-    bullets: [],
-    tags: ["Java", "Kotlin", "Angular"],
+    bullets: [
+      "Built web and mobile applications with Java Spring Boot, Angular, and Kotlin",
+      "Developed an Android e-commerce app and a carbon footprint estimator",
+    ],
+    tags: ["Java", "Spring Boot", "Kotlin", "Angular"],
+  },
+  {
+    date: "2020 — 2021",
+    type: "Bachelor's Degree",
+    title: "Web & Digital (Web Marketing)",
+    company: "My Digital School · France",
+    bullets: [
+      "Built and deployed a full website using WordPress",
+      "Improved SEO performance through technical optimizations and content strategy",
+    ],
+    tags: ["WordPress", "SEO", "HTML", "CSS", "Photoshop", "Illustrator"],
   },
 ];
 

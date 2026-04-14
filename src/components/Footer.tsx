@@ -42,7 +42,7 @@ export default function Footer() {
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : {}}
       transition={{ duration: 0.5 }}
-      className="border-t border-neutral-200"
+      className="border-t border-neutral-300"
     >
       <div className="max-w-5xl mx-auto px-6 md:px-12 py-14 grid grid-cols-1 gap-12 md:grid-cols-2">
         <div>
@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 md:px-12 py-4 border-t border-neutral-200 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 py-4 border-t border-neutral-300 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <p className="text-[11px] text-neutral-500">© 2026 Alizée Perrichon</p>
         <span className="flex items-center gap-1.5 text-[11px] text-neutral-500">
           <span className="w-1.5 h-1.5 rounded-full bg-green-500" />

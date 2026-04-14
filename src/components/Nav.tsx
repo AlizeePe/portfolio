@@ -21,7 +21,7 @@ export default function Nav() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       aria-label="Main navigation"
-      className="sticky top-0 z-50 border-b border-neutral-200 bg-white/80 backdrop-blur"
+      className="sticky top-0 z-50 border-b border-neutral-300 bg-white/80 backdrop-blur"
     >
       <div className="flex items-center justify-between px-6 py-8 md:px-12">
         <span className="text-sm font-medium tracking-widest uppercase text-neutral-500">
