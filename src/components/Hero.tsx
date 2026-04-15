@@ -31,16 +31,35 @@ export default function Hero() {
               Available from September · South Korea
             </span>
           </motion.div>
-
-          <motion.h1
-            {...fadeUp(0.2)}
-            className="text-4xl md:text-5xl font-medium leading-tight"
-          >
-            Frontend
-            <br />
-            Developer<span className="text-blue">.</span>
-          </motion.h1>
-
+          <div className="flex items-center justify-between gap-3 md:gap-0">
+            <motion.h1
+              {...fadeUp(0.2)}
+              className="text-4xl md:text-5xl font-medium leading-tight"
+            >
+              Frontend
+              <br />
+              Developer<span className="text-blue">.</span>
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={
+                { duration: 0.6, delay: 0.2, ease: "easeOut" } as Transition
+              }
+              className="shrink-0 md:hidden"
+            >
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-blue-mid">
+                <Image
+                  src="/profile.png"
+                  alt="Alizée Perrichon"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
+            </motion.div>
+          </div>
           <motion.p
             {...fadeUp(0.3)}
             className="text-base text-neutral-500 leading-relaxed mt-4 max-w-xl"
@@ -53,7 +72,7 @@ export default function Hero() {
             <br />
             Based in France, seeking opportunities in{" "}
             <span className="text-blue font-medium">South Korea 🇰🇷</span> from
-            September.
+            September 2026.
           </motion.p>
           <motion.p
             {...fadeUp(0.35)}
