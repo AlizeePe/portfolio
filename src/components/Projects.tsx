@@ -10,15 +10,17 @@ const projects: {
   lang: string;
   dotColor: string;
   href: string;
+  live?: string;
   image?: string;
 }[] = [
   {
     num: "01",
     name: "Blossom Tasks",
-    desc: "Personal project to learn React — Todo list app focused on building reusable UI components and scalable state management with React, TypeScript, Vite, and SCSS.",
+    desc: "Personal project to learn React — Todo list app focused on building reusable UI components and scalable state management with React, TypeScript, Vite, and SCSS. I wanted a to-do list that feels simple, practical, and enjoyable to use every day.",
     lang: "TypeScript · React",
     dotColor: "bg-blue",
     href: "https://github.com/AlizeePe/blossom-tasks",
+    live: "https://alizeepe.github.io/blossom-tasks/",
     image: "/projects/blossom-tasks.png",
   },
   {
@@ -88,29 +90,42 @@ export default function Projects() {
               />
             </div>
           )}
-          <div className="p-6 flex justify-between items-end">
-            <div>
-              <span className="text-xs text-blue tracking-widest font-medium">
-                {featured.num}
-              </span>
-              <p className="text-sm font-medium mt-1">{featured.name}</p>
-              <p className="text-[13px] text-neutral-600 leading-relaxed mt-1">
-                {featured.desc}
-              </p>
-              <span className="flex items-center gap-1.5 text-xs text-neutral-500 mt-3">
+          <div className="p-6">
+            <span className="text-xs text-blue tracking-widest font-medium">
+              {featured.num}
+            </span>
+            <p className="text-sm font-medium mt-1">{featured.name}</p>
+            <p className="text-[13px] text-neutral-600 leading-relaxed mt-1">
+              {featured.desc}
+            </p>
+            <div className="flex justify-between items-center mt-3">
+              <span className="flex items-center gap-1.5 text-xs text-neutral-500">
                 <span className={`w-2 h-2 rounded-full ${featured.dotColor}`} />
                 {featured.lang}
               </span>
+              <div className="flex items-center gap-4">
+                {featured.live && (
+                  <a
+                    href={featured.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${featured.name} live`}
+                    className="text-xs text-white bg-blue px-3 py-1.5 rounded-sm tracking-wide hover:bg-blue-deep transition-colors duration-200"
+                  >
+                    Live ↗
+                  </a>
+                )}
+                <a
+                  href={featured.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${featured.name} on GitHub`}
+                  className="text-xs text-blue tracking-wide hover:underline"
+                >
+                  GitHub ↗
+                </a>
+              </div>
             </div>
-            <a
-              href={featured.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View ${featured.name} on GitHub`}
-              className="text-xs text-blue tracking-wide hover:underline ml-6 shrink-0"
-            >
-              GitHub ↗
-            </a>
           </div>
         </motion.article>
 

@@ -72,7 +72,7 @@ export default function Hero() {
             <br />
             Based in France, seeking opportunities in{" "}
             <span className="text-blue font-medium">South Korea 🇰🇷</span> from
-            September 2026.
+            September.
           </motion.p>
           <motion.p
             {...fadeUp(0.35)}

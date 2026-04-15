@@ -55,7 +55,7 @@ export default function Skills() {
             className={`cursor-default rounded-sm border px-4 py-1.5 text-sm transition-colors duration-200 ${
               primary
                 ? "border-blue-mid bg-blue-light text-blue-deep"
-                : "border-neutral-300 bg-neutral-50 text-neutral-600 hover:border-blue-mid hover:text-blue-deep"
+                : "border-neutral-300 bg-neutral-50 text-neutral-600"
             }`}
           >
             {label}
