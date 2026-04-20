@@ -1,7 +1,11 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+
+import { useRef } from "react";
+
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+
+import { useLightbox } from "@/hooks/useLightbox";
 
 type BadgeType = "wip" | "completed";
 
@@ -78,7 +82,7 @@ const schoolProjects: SchoolProject[] = [
 export default function Projects() {
   const ref = useRef<HTMLElement | null>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const [lightbox, setLightbox] = useState<number | null>(null);
+  const { lightbox, open, close } = useLightbox<number>();
 
   const badgeStyle = {
     wip: "bg-amber-50 border-amber-200 text-amber-800",
@@ -87,14 +91,14 @@ export default function Projects() {
 
   return (
     <section ref={ref} id="projects" className="py-14">
-      <motion.p
+      <motion.h2
         initial={{ opacity: 0, y: 8 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="text-base tracking-widest uppercase text-neutral-500 mb-7"
       >
         Projects
-      </motion.p>
+      </motion.h2>
 
       <motion.div
         initial="hidden"
@@ -115,9 +119,10 @@ export default function Projects() {
               }}
               className="group border border-neutral-100 rounded-xl overflow-hidden bg-white hover:bg-neutral-50 transition-colors duration-200 flex flex-col"
             >
-              <div
-                className="h-64 overflow-hidden bg-neutral-50 cursor-zoom-in"
-                onClick={() => setLightbox(i)}
+              <button
+                className="h-64 w-full block overflow-hidden bg-neutral-50 cursor-zoom-in"
+                onClick={() => open(i)}
+                aria-label={`View ${project.name} preview`}
               >
                 <Image
                   src={project.image}
@@ -126,7 +131,7 @@ export default function Projects() {
                   height={256}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-              </div>
+              </button>
 
               <div className="p-5 flex flex-col flex-1">
                 <div className="flex items-center justify-between mb-2">
@@ -239,14 +244,25 @@ export default function Projects() {
 
       {lightbox !== null && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Project preview"
           className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-6"
-          onClick={() => setLightbox(null)}
+          onClick={() => close()}
         >
+          <button
+            onClick={() => close()}
+            aria-label="Close preview"
+            className="absolute top-4 right-4 text-white text-sm bg-white/20 px-3 py-1.5 rounded-sm hover:bg-white/30"
+          >
+            ✕
+          </button>
           <Image
             src={personalProjects[lightbox].image}
             alt={`${personalProjects[lightbox].name} preview`}
             width={800}
             height={600}
+            onClick={(e) => e.stopPropagation()}
             className="max-h-[90vh] w-auto object-contain rounded-lg"
           />
         </div>
