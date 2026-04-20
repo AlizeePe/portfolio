@@ -14,6 +14,7 @@ const skills = {
     "Cypress",
     "Storybook",
     "Figma",
+    "Framer Motion",
   ],
 };
 
