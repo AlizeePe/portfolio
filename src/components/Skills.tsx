@@ -2,25 +2,23 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const skills = {
-  main: ["TypeScript", "JavaScript", "Lit", "Redux", "C#"],
-  other: [
-    "React",
-    "Next.js",
-    "Java",
-    "SCSS",
-    "Tailwind CSS",
-    "Git",
-    "Cypress",
-    "Storybook",
-    "Figma",
-    "Framer Motion",
-  ],
-};
-
-const allSkills = [
-  ...skills.main.map((skill) => ({ label: skill, primary: true })),
-  ...skills.other.map((skill) => ({ label: skill, primary: false })),
+const skills = [
+  "TypeScript",
+  "JavaScript",
+  "React",
+  "Lit",
+  "Redux",
+  "SCSS",
+  "Tailwind CSS",
+  "Next.js",
+  "C#",
+  "Java",
+  "Git",
+  "Vitest",
+  "Cypress",
+  "Storybook",
+  "Figma",
+  "Framer Motion",
 ];
 
 export default function Skills() {
@@ -46,20 +44,16 @@ export default function Skills() {
           hidden: {},
         }}
       >
-        {allSkills.map(({ label, primary }) => (
+        {skills.map((skill) => (
           <motion.span
-            key={label}
+            key={skill}
             variants={{
               hidden: { opacity: 0, y: 6 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
             }}
-            className={`cursor-default rounded-sm border px-4 py-1.5 text-sm transition-colors duration-200 ${
-              primary
-                ? "border-blue-mid bg-blue-light text-blue-deep"
-                : "border-neutral-300 bg-neutral-50 text-neutral-600"
-            }`}
+            className="cursor-default rounded-sm border border-blue-mid bg-blue-light text-blue-deep px-4 py-1.5 text-sm"
           >
-            {label}
+            {skill}
           </motion.span>
         ))}
       </motion.div>
